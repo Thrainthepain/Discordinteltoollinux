@@ -4,9 +4,17 @@ A simple, lightweight desktop client that monitors your EVE Online chat logs and
 
 ## 🚀 Quick Start
 
+### Option 1: Simple Launcher (Recommended)
 1. **Download the client files** to a folder on your computer
-2. **Run `./start-intel-monitor.sh`** to start the client
-3. **Done!** The monitor will automatically find your EVE logs and start watching for intel
+2. **Make the script executable:** `chmod +x LAUNCH-INTEL-MONITOR.sh`
+3. **Run the launcher:** `./LAUNCH-INTEL-MONITOR.sh`
+4. **Done!** The launcher will automatically install dependencies and start the monitor
+
+### Option 2: Original Launcher
+1. **Download the client files** to a folder on your computer  
+2. **Make the script executable:** `chmod +x start-intel-monitor.sh`
+3. **Run the launcher:** `./start-intel-monitor.sh`
+4. **Done!** The monitor will automatically find your EVE logs and start watching for intel
 
 ## 📋 Requirements
 
