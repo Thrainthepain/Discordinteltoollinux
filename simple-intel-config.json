@@ -1,6 +1,13 @@
 {
   "serverUrl": "https://intel.thrainkrill.space",
   "apiKey": "desktop-client-api-key-2024",
-  "pilotName": "Thrain Krill",
-  "eveLogsPath": ""
+  "pilotName": "Your Pilot Name",
+  "eveLogsPath": "",
+  "_comment1": "Set your EVE pilot name above",
+  "_comment2": "Common Linux EVE logs paths:",
+  "_comment3": "Native Linux: ~/.local/share/CCP/EVE/logs/Chatlogs/",
+  "_comment4": "Steam/Proton: ~/.steam/steam/steamapps/compatdata/8500/pfx/drive_c/users/steamuser/Documents/EVE/logs/Chatlogs/",
+  "_comment5": "Lutris/Wine: ~/Games/eve-online/drive_c/users/USERNAME/Documents/EVE/logs/Chatlogs/",
+  "_comment6": "Custom Wine: ~/.wine/drive_c/users/USERNAME/Documents/EVE/logs/Chatlogs/",
+  "_comment7": "Replace USERNAME with your actual username"
 }

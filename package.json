@@ -1,27 +1,34 @@
 {
-  "name": "eve-intel-monitor-simple",
-  "version": "1.0.0",
-  "description": "Simple EVE Online Intel Monitor - Command Line Client",
+  "name": "eve-intel-monitor-linux",
+  "version": "2.1.0",
+  "description": "Enhanced EVE Online Intel Monitor for Linux - Real-time chat log monitoring with subsecond response",
   "main": "simple-intel-monitor.js",
   "type": "module",
   "scripts": {
-    "start": "node simple-intel-monitor.js",
+    "start": "node simple-intel-monitor.js start",
     "test": "node simple-intel-monitor.js test",
-    "monitor": "node simple-intel-monitor.js start"
+    "monitor": "node simple-intel-monitor.js start",
+    "install-deps": "npm install"
   },
   "dependencies": {
-    "chokidar": "^3.6.0"
+    "chokidar": "^3.5.3",
+    "node-fetch": "^3.3.2"
   },
   "keywords": [
-    "eve-online",
-    "intel",
-    "monitoring",
+    "eve-online", 
+    "intel", 
+    "monitoring", 
     "chat-logs",
+    "linux",
+    "gaming",
+    "realtime",
+    "wine",
     "command-line"
   ],
   "author": "Thrain Krill",
   "license": "MIT",
   "engines": {
     "node": ">=16.0.0"
-  }
+  },
+  "os": ["linux"]
 }

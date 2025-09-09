@@ -1,55 +1,46 @@
-# EVE Online Intel Monitor Client - Linux
+# EVE Online Intel Monitor Client - Enhanced Linux v3.0.0
 
-A simple, lightweight desktop client that monitors your EVE Online chat logs and automatically submits intel to the intelligence server. Designed specifically for Linux users running EVE through Wine, Steam Proton, or Lutris.
+An enhanced, high-performance desktop client that monitors your EVE Online chat logs with **real-time response** and automatically submits intel to the intelligence server. Now featuring **Durable Objects** for perfect cross-instance duplicate detection. Designed specifically for Linux users running EVE through Wine, Steam Proton, or Lutris with comprehensive auto-discovery.
 
-## 🚀 Quick Start
+---
 
-### Option 1: Simple Launcher (Recommended)
-1. **Download the client files** to a folder on your computer
-2. **Make the script executable:** `chmod +x LAUNCH-INTEL-MONITOR.sh`
-3. **Run the launcher:** `./LAUNCH-INTEL-MONITOR.sh`
-4. **Done!** The launcher will automatically install dependencies and start the monitor
+## 🚀 Quick Start - **SUPER EASY!**
 
-### Option 2: Original Launcher
-1. **Download the client files** to a folder on your computer  
+### **For New Users (First Time Setup):**
+1. **Download all files** to a folder on your computer
 2. **Make the script executable:** `chmod +x start-intel-monitor.sh`
-3. **Run the launcher:** `./start-intel-monitor.sh`
-4. **Done!** The monitor will automatically find your EVE logs and start watching for intel
+3. **Run the script:** `./start-intel-monitor.sh`
+4. **If Node.js isn't installed:** The script will show you the exact commands for your Linux distribution
+5. **That's it!** Everything else is automatic:
+   - ✅ Automatically installs required packages
+   - ✅ Automatically finds your EVE chat logs (Wine/Proton/Lutris)
+   - ✅ Automatically tests server connection
+   - ✅ Starts monitoring for real-time intel
 
-## 📋 Requirements
+### **For Return Users:**
+Just run `./start-intel-monitor.sh` - everything is already set up!
 
-- **Node.js 16+** (Install via your package manager)
+## 📋 What You Need
+
+- **Linux** (tested on Ubuntu, Fedora, Arch, Debian)
+- **Node.js** - *The script will guide you through installation if needed*
 - **EVE Online** running via Wine, Steam Proton, or Lutris
 - **Chat logging enabled** in EVE Online
-- **Linux** (tested on Ubuntu, Fedora, Arch)
 
-## 🛠️ Setup
+---
 
-### Step 1: Install Node.js
+## 🛠️ Setup Details
 
-**Ubuntu/Debian:**
-```bash
-sudo apt update && sudo apt install nodejs npm
-```
+*Most users can skip this section - the script handles everything automatically!*
 
-**CentOS/RHEL/Fedora:**
-```bash
-sudo dnf install nodejs npm
-```
-
-**Arch Linux:**
-```bash
-sudo pacman -S nodejs npm
-```
-
-### Step 2: Enable EVE Chat Logging
+### Step 1: Enable EVE Chat Logging
 1. In EVE Online, press `ESC` → `Settings`
 2. Go to `Chat & Windows` tab  
 3. Set `Chat Logging` to `Enabled`
 4. Join intel channels (like Phoenix_Intel, Phoenix_Intel_South, etc.)
 
-### Step 3: Configure the Client (Optional)
-Edit `simple-intel-config.json` to customize settings:
+### Step 2: Configuration (Optional)
+The client works perfectly with default settings! But if you want to customize, edit `simple-intel-config.json`:
 
 ```json
 {
