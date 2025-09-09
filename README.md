@@ -275,4 +275,5 @@ If you encounter issues:
 
 **Fly safe! o7**
 
-*For Windows users, see the Windows client package instead.*
+*For Windows users, see the Windows client package instead. https://github.com/Thrainthepain/Discordinteltoolwindows*
+
