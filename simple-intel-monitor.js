@@ -80,9 +80,16 @@ class AdvancedIntelMonitor {
      * @returns {string} The path to the chat logs directory.
      */
     findEveLogsDirectory() {
-        if (this.config.eveLogsPath && fs.existsSync(this.config.eveLogsPath)) {
+        // Check if a custom path is set and non-empty
+        if (this.config.eveLogsPath && this.config.eveLogsPath.trim() !== '' && fs.existsSync(this.config.eveLogsPath)) {
             console.log(`✓ Using custom EVE logs path from config: ${this.config.eveLogsPath}`);
             return this.config.eveLogsPath;
+        }
+        
+        // If custom path is set but doesn't exist, warn the user
+        if (this.config.eveLogsPath && this.config.eveLogsPath.trim() !== '' && !fs.existsSync(this.config.eveLogsPath)) {
+            console.log(`⚠️ Custom EVE logs path not found: ${this.config.eveLogsPath}`);
+            console.log(`⚠️ Falling back to auto-detection...`);
         }
 
         const username = os.userInfo().username;

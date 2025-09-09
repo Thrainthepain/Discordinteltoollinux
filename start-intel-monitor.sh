@@ -126,7 +126,7 @@ print_info "npm version: $(npm --version)"
 echo
 
 # Install dependencies if needed
-print_step "[3/5] Checking dependencies..."
+print_step "[3/6] Checking dependencies..."
 
 if [ ! -d "node_modules" ]; then
     print_info "node_modules directory not found. Installing required packages..."
@@ -152,8 +152,46 @@ else
     echo
 fi
 
+# Validate configuration
+print_step "[4/6] Validating configuration..."
+
+# Check if config file exists
+if [ ! -f "simple-intel-config.json" ]; then
+    print_error "Configuration file not found!"
+    echo
+    echo "The file simple-intel-config.json is missing."
+    echo "Please make sure you have all the required files."
+    echo
+    exit 1
+fi
+
+# Use node to check if custom EVE logs path is valid (if set)
+CONFIG_VALIDATION=$(node -e "
+const fs = require('fs');
+try {
+    const config = JSON.parse(fs.readFileSync('simple-intel-config.json', 'utf8'));
+    if (config.eveLogsPath && config.eveLogsPath.trim() !== '') {
+        if (fs.existsSync(config.eveLogsPath)) {
+            console.log('✓ Custom EVE logs path validated: ' + config.eveLogsPath);
+        } else {
+            console.log('⚠ Custom EVE logs path not found: ' + config.eveLogsPath);
+            console.log('⚠ The monitor will attempt auto-detection instead.');
+        }
+    } else {
+        console.log('✓ Using auto-detection for EVE logs directory.');
+    }
+} catch (e) {
+    console.log('✗ Error reading configuration: ' + e.message);
+    process.exit(1);
+}
+" 2>/dev/null)
+
+echo "$CONFIG_VALIDATION"
+print_status "Configuration validated"
+echo
+
 # Test connection first
-print_step "[4/5] Testing connection to intel server..."
+print_step "[5/6] Testing connection to intel server..."
 if node simple-intel-monitor.js test 2>/dev/null; then
     print_status "Connection test successful!"
 else
@@ -166,7 +204,7 @@ fi
 fi
 
 echo
-print_step "[5/5] Starting the EVE Intel Monitor..."
+print_step "[6/6] Starting the EVE Intel Monitor..."
 
 # Check if configuration exists and is complete
 CONFIG_FILE="simple-intel-config.json"
