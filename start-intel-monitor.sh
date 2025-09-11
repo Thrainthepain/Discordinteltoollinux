@@ -200,8 +200,6 @@ else
     echo
     exit 1
 fi
-    exit 1
-fi
 
 echo
 print_step "[6/6] Starting the EVE Intel Monitor..."
